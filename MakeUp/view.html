@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: url('https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148920283.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #ff3399;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 id="product-name"></h2>
+        <img id="product-image" src="" alt="Product Image">
+        <p id="product-description"></p>
+        <p><strong>Price:</strong> $<span id="product-price"></span></p>
+        <p><strong>Brand:</strong> <span id="product-brand"></span></p>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+
+        if (productId) {
+            fetch(`https://makeup-api.herokuapp.com/api/v1/products/${productId}.json`)
+                .then(response => response.json())
+                .then(product => {
+                    document.getElementById('product-name').textContent = product.name;
+                    document.getElementById('product-image').src = product.image_link;
+                    document.getElementById('product-description').textContent = product.description;
+                    document.getElementById('product-price').textContent = product.price;
+                    document.getElementById('product-brand').textContent = product.brand;
+                })
+                .catch(error => {
+                    document.querySelector('.container').innerHTML = "<p>Product details not found. Please try again later.</p>";
+                    console.error('Error fetching product details:', error);
+                });
+        } else {
+            document.querySelector('.container').innerHTML = "<p>Product ID not provided.</p>";
+        }
+    </script>
+</body>
+</html>

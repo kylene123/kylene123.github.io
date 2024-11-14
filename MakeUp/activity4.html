@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makeup Search</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: url('https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148920283.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #d63384;
+        }
+        .search-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .btn-custom {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="search-container">
+            <h1>Find Your Favorite Makeup Brand</h1>
+            <input type="text" id="searchInput" class="form-control" placeholder="Type a brand (e.g., maybelline)">
+            <button class="btn btn-custom mt-3" onclick="fetchMakeup()">Search</button>
+            <div id="resultsContainer" class="row mt-5"></div>
+        </div>
+    </div>
+
+    <script>
+        async function fetchMakeup() {
+            const query = document.getElementById('searchInput').value;
+            const corsProxy = 'https://api.allorigins.win/raw?url=';
+            const apiUrl = `https://makeup-api.herokuapp.com/api/v1/products.json?brand=${query}`;
+
+            try {
+                const response = await fetch(corsProxy + encodeURIComponent(apiUrl));
+                const products = await response.json();
+
+                const resultsContainer = document.getElementById('resultsContainer');
+                resultsContainer.innerHTML = ''; 
+
+                if (products.length === 0) {
+                    resultsContainer.innerHTML = '<p>No products found. Try another search!</p>';
+                    return;
+                }
+
+                products.forEach(product => {
+                    const productCard = `
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <img src="${product.image_link}" class="card-img-top" alt="${product.name}">
+                                <div class="card-body">
+                                    <h5 class="card-title">${product.name}</h5>
+                                    <p class="card-text">${product.description ? product.description.substring(0, 100) + '...' : 'No description available.'}</p>
+                                    <a href="view.html?id=${product.id}" class="btn btn-outline-primary">View Details</a>
+                                </div>
+                            </div>
+                        </div>`;
+                    resultsContainer.insertAdjacentHTML('beforeend', productCard);
+                });
+            } catch (error) {
+                console.error("Error fetching data:", error);
+                document.getElementById('resultsContainer').innerHTML = '<p>There was an error fetching the data. Please try again later.</p>';
+            }
+        }
+    </script>
+</body>
+</html>
