@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baguio City</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/kylene123/images/refs/heads/main/1.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-color: floralwhite;
+        }
+        .navbar {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        #home {
+            background-image: url('https://images.fineartamerica.com/images-medium-large-5/1-night-view-of-the-baguio-city-luzon-panoramic-images.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            flex-direction: column;
+        }
+        #home h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+        }
+        #home h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-top: 0.5rem;
+        }
+        #gallery img, #known-for img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        #known-for .card {
+            height: 100%;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s;
+        }
+        #weather {
+            margin-top: 50px;
+        }
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Baguio City</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="#known-for">Known For</a></li>
+                <li class="nav-item"><a class="nav-link" href="#weather">Weather</a></li>
+                <li class="nav-item"><a class="nav-link" href="#map">Map</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<section id="home" class="container-fluid text-center">
+    <h1>Welcome to Baguio City</h1>
+    <h2 class="lead">The Summer Capital of the Philippines</h2>
+</section>
+<section id="about" class="container my-5">
+    <h2>About Baguio City</h2>
+    <p>Baguio City is a popular tourist destination known for its cool climate, picturesque views, and historical landmarks. Whether you're visiting Burnham Park, Session Road, or Camp John Hay, Baguio offers a blend of nature and culture that draws tourists from all over the country.</p>
+</section>
+
+<section id="gallery" class="container my-5">
+    <h2 class="text-center">Baguio City Tourist Spots</h2>
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <img src="https://www.detourista.com/wp/wp-content/uploads/Unorganized/Bell-Church-001.jpg" class="img-fluid">
+        </div>
+        <div class="col-md-4 mb-4">
+            <img src="https://gttp.images.tshiftcdn.com/223006/x/0/top-19-baguio-city-tourist-spots-3.jpg?auto=compress%2Cformat&ch=Width%2CDPR&dpr=1&ixlib=php-3.3.0&w=883" class="img-fluid">
+        </div>
+        <div class="col-md-4 mb-4">
+            <img src="https://d1k571r5p7i4n1.cloudfront.net/c.1874/large/Here_s_How_You_Can_Enjoy_Baguio_During_the_Rainy_Season.webp" class="img-fluid" alt="Sunset view over Baguio City">
+        </div>
+        <div class="col-md-4 mb-4">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiTrEvus1rzjIgXwbicQg6xIt2cpbSR6cUs_AIACtiWv_T-87aidbBBmt3zvga6_YAwlW_-F1pX76M5Ysi2ncCxa7ExU9t1zM8ogOogrBWlyGO0hmxo1CDp1zYq6Ibrc1P-f4o0yHZPB9puLaULV3LFuECd0hPEEP9ljZtvD_iDPb7zadog03lirDgI/s2048/Igorot%20Stone%20Kingdom.jpg" class="img-fluid">
+        </div>
+        <div class="col-md-4 mb-4">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe8Kar-2bx9J124xuEYNJlPDVtO33LxmHBm-c7A_9dveSpqdC1hRTS0A5kkzYHAEEAWQ8&usqp=CAU" class="img-fluid">
+        </div>
+        <div class="col-md-4 mb-4">
+            <img src="https://culturalcreatives.org/wp-content/uploads/2023/12/Baguio-Tourist-Spot.jpg" class="img-fluid">
+        </div>
+        <div class="col-md-4 mb-4">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8iKTAxZYjW2OEKLp6xk7lIfCrfGsx3xTknA&s" class="img-fluid">
+        </div>
+        <div class="col-md-4 mb-4">
+            <img src="https://i.pinimg.com/736x/1e/13/b9/1e13b905ad867389631547635fc8c120.jpg" class="img-fluid">
+        </div>
+        <div class="col-md-4 mb-4">
+            <img src="https://thehappytrip.com/wp-content/uploads/2015/02/53657222_2339859629618365_5108353369362137088_n.jpg" class="img-fluid">
+        </div>
+    </div>
+</section>
+
+<section id="known-for" class="container my-5">
+    <h2 class="text-center">Baguio Known For...</h2>
+    <div class="row">
+        <div class="col-md-2 mb-4">
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo86ndpoHul9hPfMO2KHKNVR1LuCmJgYr2Fg&s" class="card-img-top" alt="Panagbenga Festival">
+                <div class="card-body">
+                    <h5 class="card-title">Panagbenga Festival</h5>
+                    <p class="card-text">Experience the vibrant flower festival celebrated every February.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 mb-4">
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJM9qBZxYth_YO6z7onGQkrev5gl1M5KV5Bw&s" class="card-img-top" alt="Local Food">
+                <div class="card-body">
+                    <h5 class="card-title">Local Cuisine</h5>
+                    <p class="card-text">Savor the unique flavors of Baguio's local dishes.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 mb-4">
+            <div class="card">
+                <img src="https://thumbs.dreamstime.com/b/vendor-prepares-strawberry-taho-popular-delicacy-baguio-soybean-curd-sauce-pieces-267533875.jpg" class="card-img-top" alt="Strawberry Taho">
+                <div class="card-body">
+                    <h5 class="card-title">Strawberry Taho</h5>
+                    <p class="card-text">Delight in this sweet treat made with fresh strawberries.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 mb-4">
+            <div class="card">
+                <img src="https://media.gettyimages.com/id/1061702572/photo/night-market-along-harrison-road-in-baguio-city.jpg?s=1024x1024&w=gi&k=20&c=9mqftcibLXZcVYEph5lKm3iBGCvOOA1qUxL8-9LUiKo=" class="card-img-top" alt="Night Market">
+                <div class="card-body">
+                    <h5 class="card-title">Night Market</h5>
+                    <p class="card-text">Explore the vibrant night market filled with local products.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 mb-4">
+            <div class="card">
+                <img src="https://i.pinimg.com/736x/1d/51/cd/1d51cd9039210e3c6a1d41807d3b7c87.jpg" class="card-img-top" alt="Philippine Military Academy">
+                <div class="card-body">
+                    <h5 class="card-title">Philippine Military Academy</h5>
+                    <p class="card-text">Home to the future leaders of the Armed Forces of the Philippines.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 mb-4">
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJkNlMc44Z02f4x2MBPUG5LuDCDZcoU31LiQ&s" class="card-img-top" alt="Burnham Lake">
+                <div class="card-body">
+                    <h5 class="card-title">Burnham Lake</h5>
+                    <p class="card-text">Enjoy paddle boating and picnics by the lake.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="weather" class="container my-5">
+    <h2 class="text-center">Current Weather in Baguio City</h2>
+    <div id="weather-display" class="text-center">
+        <p>Loading weather...</p>
+    </div>
+</section>
+
+<section id="map" class="container my-5">
+    <h2 class="text-center">Explore Baguio City</h2>
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61239.95594470392!2d120.5475750123589!3d16.39955362960153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3391a16879def13f%3A0x8edef534be3a75c0!2sBaguio%2C%20Benguet!5e0!3m2!1sen!2sph!4v1732713089125!5m2!1sen!2sph" 
+        width="100%" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</section>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+  });
+
+  const weatherApiKey = '1fc2e837df53617a84b128827ad61a8c';
+  const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=Baguio,PH&units=metric&appid=${weatherApiKey}`;
+
+  fetch(weatherUrl)
+    .then(response => response.json())
+    .then(data => {
+        const { temp, weather } = data.main ? data.main : {};
+        document.getElementById('weather-display').innerHTML = `
+            <p>Temperature: ${temp}°C</p>
+            <p>Condition: ${data.weather[0].description}</p>
+        `;
+    })
+    .catch(() => {
+        document.getElementById('weather-display').innerHTML = '<p>Unable to load weather data.</p>';
+    });
+
+function initMap() {
+    const baguio = { lat: 16.4023, lng: 120.596 };
+    const map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 12,
+        center: baguio,
+    });
+    const marker = new google.maps.Marker({
+        position: baguio,
+        map: map,
+    });
+}
+
+</script>
+
+
+</body>
+</html>
